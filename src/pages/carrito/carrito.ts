@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ProductoPage page.
+ * Generated class for the CarritoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,28 +10,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-producto',
-  templateUrl: 'producto.html',
+  selector: 'page-carrito',
+  templateUrl: 'carrito.html',
 })
-export class ProductoPage {
-
-producto;
-carrito = [];
-
+export class CarritoPage {
+  carrito;
+  producto;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.producto = this.navParams.get("producto");
     this.carrito = this.navParams.get("carrito");
-
+    this.producto = this.navParams.get("producto");
   }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProductoPage');
-  }
-
-  clickCarrito(){
-    this.carrito.push(this.producto);
-    this.navCtrl.pop();
-
+    console.log('ionViewDidLoad CarritoPage');
   }
 
 }

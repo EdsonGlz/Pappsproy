@@ -15,9 +15,8 @@
 
 
 <ion-content padding>
-    <ion-col><img style = "height: 100px; width: 200 "[src] = producto.imagen ></ion-col>
+    <ion-col><img style = "height: 100px; width: 200 " [src] = producto.imagen ></ion-col>
     <ion-card>
-
       <ion-card-header>
           <ion-row>
               <ion-list>
@@ -39,46 +38,26 @@
           <ion-icon name = "star" *ngFor="let s of producto.valoracion"></ion-icon>
           </ion-row>
           <h2 ion-text color="primary">Reseñas del producto:</h2>  <h2>{{numero}}</h2>
-          <ion-card>
-
+          <ion-card *ngFor= "let r of producto.resena">
               <ion-item>
                 <ion-avatar item-start>
-                  <img [src] = "">
+                  <img [src] = r.avatar>
                 </ion-avatar>
-                <h2>Marty McFly</h2>
-                <p>November 5, 1955</p>
+                <h2>{{r.usuario}}</h2>
+                <p>{{r.fecha}}</p>
               </ion-item>
-            
-              <img src="img/advance-card-bttf.png">
+    
             
               <ion-card-content>
-                <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+                <p>{{r.texto}}</p>
               </ion-card-content>
-            
-              <ion-row>
-                <ion-col>
-                  <button ion-button icon-start clear small>
-                    <ion-icon name="thumbs-up"></ion-icon>
-                    <div>12 Likes</div>
-                  </button>
-                </ion-col>
-                <ion-col>
-                  <button ion-button icon-start clear small>
-                    <ion-icon name="text"></ion-icon>
-                    <div>4 Comments</div>
-                  </button>
-                </ion-col>
-                <ion-col center text-center>
-                  <ion-note>
-                    11h ago
-                  </ion-note>
-                </ion-col>
-              </ion-row>
             
             </ion-card>
       </ion-card-content>
     
     </ion-card>
+
+    <button (click)="clickCarrito()" ion-button color="secondary">Agregar Al Carrito</button>
     
   
 </ion-content>
